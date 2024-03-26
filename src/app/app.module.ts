@@ -1,5 +1,5 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, registerLocaleData } from '@angular/common';
 
@@ -44,17 +44,13 @@ import { CropperDialog } from './cropper-dialog';
     LyButtonModule,
     LyIconModule,
     LyDialogModule,
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule.forRoot(),
+    HammerModule
   ],
   /** Add themes */
   providers: [
     { provide: LY_THEME, useClass: MinimaLight, multi: true }, // name: \`minima-light\`
     { provide: LY_THEME, useClass: MinimaDark, multi: true }, // name: \`minima-dark\`
-    { provide: LY_DIALOG_DATA, useValue: {} },
-    LyDialogRef,
-    LyOverlayRef,
-    LyDialog,
-    LyOverlay
   ],
   declarations: [ AppComponent, CropperDialog ],
   bootstrap:    [ AppComponent, CropperDialog ]
